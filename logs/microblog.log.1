@@ -1,0 +1,121 @@
+2023-10-20 14:50:36,622 ERROR: Exception on /auth/login [POST] [in C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\app\auth\routes.py", line 18, in login
+    user = User.query.filter_by(username=form.username.data).first()
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\orm\query.py", line 2743, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\orm\query.py", line 2842, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2262, in execute
+    return self._execute_internal(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2144, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1412, in execute
+    return meth(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.first_name AS user_first_name, user.last_name AS user_last_name, user.email AS user_email, user.password AS user_password, user.active AS user_active, user.password_hash AS user_password_hash, user.last_seen AS user_last_seen 
+FROM user 
+WHERE user.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('godo', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2023-10-20 15:12:13,302 INFO: Microblog startup [in C:\Users\NFA LEYTE\Documents\flask-bsmo\app\__init__.py:66]
+2023-10-20 15:12:52,727 INFO: Microblog startup [in C:\Users\NFA LEYTE\Documents\flask-bsmo\app\__init__.py:66]
+2023-10-20 15:15:48,777 INFO: Microblog startup [in C:\Users\NFA LEYTE\Documents\flask-bsmo\app\__init__.py:66]
+2023-10-20 15:15:55,152 INFO: Microblog startup [in C:\Users\NFA LEYTE\Documents\flask-bsmo\app\__init__.py:66]
+2023-10-20 15:16:09,253 INFO: Microblog startup [in C:\Users\NFA LEYTE\Documents\flask-bsmo\app\__init__.py:66]
+2023-10-20 15:18:42,009 INFO: Microblog startup [in C:\Users\NFA LEYTE\Documents\flask-bsmo\app\__init__.py:66]
+2023-10-20 15:18:53,717 INFO: Microblog startup [in C:\Users\NFA LEYTE\Documents\flask-bsmo\app\__init__.py:66]
+2023-10-20 15:19:51,508 INFO: Microblog startup [in C:\Users\NFA LEYTE\Documents\flask-bsmo\app\__init__.py:66]
+2023-10-20 15:20:07,197 INFO: Microblog startup [in C:\Users\NFA LEYTE\Documents\flask-bsmo\app\__init__.py:66]
+2023-10-20 15:20:12,523 INFO: Microblog startup [in C:\Users\NFA LEYTE\Documents\flask-bsmo\app\__init__.py:66]
+2023-10-20 15:21:37,962 INFO: Microblog startup [in C:\Users\NFA LEYTE\Documents\flask-bsmo\app\__init__.py:66]
+2023-10-20 15:21:43,952 INFO: Microblog startup [in C:\Users\NFA LEYTE\Documents\flask-bsmo\app\__init__.py:66]
+2023-10-20 15:22:07,480 ERROR: Exception on /auth/login [POST] [in C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\app\auth\routes.py", line 18, in login
+    user = User.query.filter_by(username=form.username.data).first()
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\orm\query.py", line 2743, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\orm\query.py", line 2842, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2262, in execute
+    return self._execute_internal(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\orm\session.py", line 2144, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1412, in execute
+    return meth(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\NFA LEYTE\Documents\flask-bsmo\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.first_name AS user_first_name, user.last_name AS user_last_name, user.email AS user_email, user.password AS user_password, user.active AS user_active, user.password_hash AS user_password_hash, user.last_seen AS user_last_seen 
+FROM user 
+WHERE user.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('godo', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2023-10-20 15:28:50,242 INFO: Microblog startup [in C:\Users\NFA LEYTE\Documents\flask-bsmo\app\__init__.py:66]
